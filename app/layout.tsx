@@ -48,15 +48,17 @@ export default function RootLayout({
                 />
             </head>
             <body className="flex w-full min-h-screen">
-                <Sidebar />
-
                 <div
-                    className="w-full max-w-5xl"
-                    style={{
-                        marginLeft: 'calc(50vw - min(50%, 896px))',
-                        // marginRight: 'calc((100vw - 100%)/2)',
-                    }}
+                    className="w-full max-w-5xl mx-auto flex-col flex"
+                    style={
+                        {
+                            // marginLeft: 'calc(50vw - min(50%, 896px))',
+                            // marginRight: 'calc((100vw - 100%)/2)',
+                        }
+                    }
                 >
+                    <Sidebar />
+
                     {children}
 
                     <Footer />
