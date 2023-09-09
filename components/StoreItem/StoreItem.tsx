@@ -88,6 +88,9 @@ export const StoreItemPreview = () => {
                 camera={{ zoom: 3 }}
                 // gl={{ preserveDrawingBuffer: true }}
                 className="w-full h-full"
+                style={{
+                    pointerEvents: 'none',
+                }}
             >
                 <color attach="background" args={['#fff']} />
                 <MyScene />
