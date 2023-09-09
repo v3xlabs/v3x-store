@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 export const Sidebar: FC = () => {
     return (
-        <header className="w-auto p-8 flex flex-col gap-4">
+        <header className="w-auto p-8 flex flex-col gap-4 max-w-xs">
             <div className="flex flex-col justify-center whitespace-nowrap">
                 <div className="bg-notblack w-fit font-bold">
                     <span className="text-white -1 mx-3">v3xlabs</span>
@@ -16,6 +16,7 @@ export const Sidebar: FC = () => {
                         ['.contact', 'https://v3x.contact'],
                         ['.domains', 'https://v3x.domains'],
                         ['.health', 'https://v3x.health'],
+                        ['.store', 'https://v3x.store'],
                         ['.team', 'https://v3x.team'],
                         ['.chat', 'https://v3x.chat'],
                         ['.wiki', 'https://v3x.wiki'],

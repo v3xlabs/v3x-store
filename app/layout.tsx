@@ -47,10 +47,16 @@ export default function RootLayout({
                     content="width=device-width, initial-scale=1"
                 />
             </head>
-            <body className="w-full min-h-screen flex">
+            <body className="flex w-full min-h-screen">
                 <Sidebar />
 
-                <div className="w-full">
+                <div
+                    className="w-full max-w-5xl"
+                    style={{
+                        marginLeft: 'calc(50vw - min(50%, 896px))',
+                        // marginRight: 'calc((100vw - 100%)/2)',
+                    }}
+                >
                     {children}
 
                     <Footer />
