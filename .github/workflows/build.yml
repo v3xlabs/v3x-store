@@ -1,0 +1,36 @@
+name: Deploy App
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
+
+      - name: Edgeserver Upload
+        uses: lvkdotsh/edgeserver-action@master
+        with:
+          app_id: "207907943444648940"
+          server: https://api.edgeserver.io
+          token: ${{ secrets.SIGNAL_TOKEN }}
+          directory: dist
